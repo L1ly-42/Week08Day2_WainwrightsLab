@@ -1,5 +1,7 @@
 let allWainwrights;
 const wainwrightList = document.querySelector('#wainwrights-list');
+const form = document.querySelector('form');
+
 
 const getAllWainwrights = async ()=>{
     const response = await fetch(`https://raw.githubusercontent.com/annahndr/annahndr.github.io/master/wainwrights_data/wainwrights.json`)
@@ -44,6 +46,13 @@ const formatWainwright = (wainwright) =>{
 
 }
 
+// event listener for form 
+form.addEventListener("submit",(evt)=>{
+    evt.preventDefault();
+    let writing = evt.target['input'].value;
+    console.log(writing);
+    return writing;
+})
 
 getAllWainwrights();
 
