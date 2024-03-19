@@ -46,12 +46,25 @@ const formatWainwright = (wainwright) =>{
 
 }
 
-// event listener for form 
+// event listener for the form 
 form.addEventListener("submit",(evt)=>{
+
+    //Preventing reloads
     evt.preventDefault();
+    //storing the input
     let writing = evt.target['input'].value;
-    console.log(writing);
-    return writing;
+
+    //emptying the list
+    wainwrightList.innerHTML = '';
+
+    //populating the list with only mountains that include the input 
+    for(let wainwright of allWainwrights){
+        if(wainwright.name.toLowerCase().includes(writing.toLowerCase())){
+            formatWainwright(wainwright);
+        };
+    }
+
+    // console.log(writing);
 })
 
 getAllWainwrights();
