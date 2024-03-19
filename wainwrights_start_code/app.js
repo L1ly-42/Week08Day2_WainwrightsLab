@@ -20,7 +20,7 @@ const renderWainwrights = (json) =>{
     }
 };
 
-//function that populates wainwright list with an li formatted with with the wainwright info
+//function that populates an li formatted with the wainwright info
 const formatWainwright = (wainwright) =>{
     //creating the HTML Elements
     const ListItem = document.createElement('li');
