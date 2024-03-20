@@ -33,7 +33,7 @@ const formatWainwright = (wainwright) =>{
 
     //populating the HTML elements
     name.innerText = wainwright.name;
-    height.innerText = 'height: ' + wainwright.heightMetres +'m/ '+ wainwright.heightFeet + 'ft';
+    height.innerText = 'Height: ' + wainwright.heightMetres +'m/ '+ wainwright.heightFeet + 'ft';
     areaName.innerText = 'In ' + wainwright.area.areaName;
     areaAbout.innerText = '(' + wainwright.area.about + ')';
 
