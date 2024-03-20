@@ -2,7 +2,7 @@ let allWainwrights;
 const wainwrightList = document.querySelector('#wainwrights-list');
 const form = document.querySelector('form');
 
-
+//function that fetches the data, stores it and prints it onto the page
 const getAllWainwrights = async ()=>{
     const response = await fetch(`https://raw.githubusercontent.com/annahndr/annahndr.github.io/master/wainwrights_data/wainwrights.json`)
     const jsonData = await response.json();
@@ -12,6 +12,7 @@ const getAllWainwrights = async ()=>{
     // console.log(allWainwrights[0]); 
 };
 
+
 //function that does wainwright populating + formatting for ALL of the wainwrights 
 const renderWainwrights = (json) =>{
     for(let wainwright of json){
@@ -19,6 +20,7 @@ const renderWainwrights = (json) =>{
         formatWainwright(wainwright);
     }
 };
+
 
 //function that populates an li formatted with the wainwright info
 const formatWainwright = (wainwright) =>{
@@ -74,9 +76,4 @@ form.addEventListener("submit",(evt)=>{
 });
 
 
-
-
 getAllWainwrights();
-
-
-
