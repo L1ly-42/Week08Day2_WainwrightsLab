@@ -14,7 +14,7 @@ const getAllWainwrights = async ()=>{
     } catch(error) {
         alert('Oops, something went wrong, please try again later!');
 };
-
+}
 
 //function that does wainwright populating + formatting for ALL of the wainwrights 
 const renderWainwrights = (json) =>{
