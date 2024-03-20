@@ -46,6 +46,7 @@ const formatWainwright = (wainwright) =>{
 
 }
 
+
 // event listener for the form 
 form.addEventListener("submit",(evt)=>{
 
@@ -57,15 +58,23 @@ form.addEventListener("submit",(evt)=>{
     //emptying the list
     wainwrightList.innerHTML = '';
 
-    //populating the list with only mountains that include the input 
+    //INSERTING A LOADING HEADING
+    const loadingHeader = document.createElement('h2');
+    loadingHeader.innerText = 'Fetching Filtered Mountains...';
+    wainwrightList.appendChild(loadingHeader);
+
+    //block of code to delay(TODO):
+    wainwrightList.removeChild(loadingHeader);
     for(let wainwright of allWainwrights){
         if(wainwright.name.toLowerCase().includes(writing.toLowerCase())){
             formatWainwright(wainwright);
         };
     }
-
     // console.log(writing);
-})
+});
+
+
+
 
 getAllWainwrights();
 
