@@ -4,12 +4,15 @@ const form = document.querySelector('form');
 
 //function that fetches the data, stores it and prints it onto the page
 const getAllWainwrights = async ()=>{
+    try{
     const response = await fetch(`https://raw.githubusercontent.com/annahndr/annahndr.github.io/master/wainwrights_data/wainwrights.json`)
     const jsonData = await response.json();
     // console.log(jsonData);
     allWainwrights = jsonData;
     renderWainwrights(allWainwrights);
     // console.log(allWainwrights[0]); 
+    } catch(error) {
+        alert('Oops, something went wrong, please try again later!');
 };
 
 
